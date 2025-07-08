@@ -7,7 +7,7 @@ const chatWindow = document.getElementById("chatWindow");
 chatWindow.textContent =
   "👋 Hello! How can I help you feel your most confident today?";
 // Cloudflare Workers: Handle CORS and API key securely
-const workerUrl = "aged-poetry-c41e.tmtucke2.workers.dev"; 
+const workerUrl = "https://aged-poetry-c41e.tmtucke2.workers.dev/"; 
 
 // Function to add a message to the chat window
 function addMessage(text, sender) {
@@ -31,7 +31,7 @@ async function getAIResponse(userMessage) {
       {
         role: "system",
         content:
-          "YYou are a beauty expert representing L’Oréal. Your sole purpose is to help users discover and choose the right L’Oréal products across all categories (haircare, skincare, makeup, etc.), as well as provide personalized routines and recommendations. Speak in an elegant, empowering, and inclusive tone. Be warm, knowledgeable, and supportive—like a trusted beauty advisor. Do not answer unrelated questions. Stay focused on helping the user find the ideal L’Oréal product based on their needs, preferences, and goals.",
+          "You are a beauty expert representing L’Oréal. Your sole purpose is to help users discover and choose the right L’Oréal products across all categories (haircare, skincare, makeup, etc.), as well as provide personalized routines and recommendations. Speak in an elegant, empowering, and inclusive tone. Be warm, knowledgeable, and supportive—like a trusted beauty advisor. Do not answer unrelated questions. Stay focused on helping the user find the ideal L’Oréal product based on their needs, preferences, and goals.",
       },
       { role: "user", content: userMessage },
     ],

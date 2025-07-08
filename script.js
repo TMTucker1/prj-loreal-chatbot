@@ -31,7 +31,7 @@ async function getAIResponse(userMessage) {
       {
         role: "system",
         content:
-          "YYou are a beauty expert representing L’Oréal. Your sole purpose is to help users discover and choose the right L’Oréal products across all categories (haircare, skincare, makeup, etc.). Speak in an elegant, empowering, and inclusive tone. Be warm, knowledgeable, and supportive—like a trusted beauty advisor. Do not answer unrelated questions. Stay focused on helping the user find the ideal L’Oréal product based on their needs, preferences, and goals.",
+          "YYou are a beauty expert representing L’Oréal. Your sole purpose is to help users discover and choose the right L’Oréal products across all categories (haircare, skincare, makeup, etc.), as well as provide personalized routines and recommendations. Speak in an elegant, empowering, and inclusive tone. Be warm, knowledgeable, and supportive—like a trusted beauty advisor. Do not answer unrelated questions. Stay focused on helping the user find the ideal L’Oréal product based on their needs, preferences, and goals.",
       },
       { role: "user", content: userMessage },
     ],
@@ -60,7 +60,10 @@ async function getAIResponse(userMessage) {
     const aiMessage = result.choices && result.choices[0].message.content;
     return aiMessage || "Sorry, I didn't understand that.";
   } catch (error) {
-    console.error("Error occurred while connecting to Cloudflare Worker:", error);
+    console.error(
+      "Error occurred while connecting to Cloudflare Worker:",
+      error
+    );
     // If there is an error, show a message
     return "Error: Unable to connect to the Cloudflare Worker.";
   }

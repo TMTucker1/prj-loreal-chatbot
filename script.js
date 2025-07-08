@@ -7,7 +7,7 @@ const chatWindow = document.getElementById("chatWindow");
 chatWindow.textContent =
   "👋 Hello! How can I help you feel your most confident today?";
 // Cloudflare Workers: Handle CORS and API key securely
-const workerUrl = "aged-poetry-c41e.tmtucke2.workers.dev";
+const workerUrl = "aged-poetry-c41e.tmtucke2.workers.dev"; 
 
 // Function to add a message to the chat window
 function addMessage(text, sender) {

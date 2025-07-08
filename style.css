@@ -31,6 +31,14 @@ body {
   color: #e3a535;
 }
 
+.site-logo {
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+  height: auto;
+  filter: drop-shadow(0 0 5px #ff003b);
+}
+
 /* chat window */
 .chatbox {
   margin: 40px 0;

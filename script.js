@@ -4,7 +4,8 @@ const userInput = document.getElementById("userInput");
 const chatWindow = document.getElementById("chatWindow");
 
 // Set initial message
-chatWindow.textContent = "👋 Hello! How can I help you today?";
+chatWindow.textContent =
+  "👋 Hello! How can I help you feel your most confident today?";
 // Cloudflare Workers: Handle CORS and API key securely
 const workerUrl = "aged-poetry-c41e.tmtucke2.workers.dev";
 
@@ -25,7 +26,11 @@ async function getAIResponse(userMessage) {
   const data = {
     model: "gpt-4o", // Use the gpt-4o model
     messages: [
-      { role: "system", content: "You are a helpful assistant." },
+      {
+        role: "system",
+        content:
+          "YYou are a beauty expert representing L’Oréal. Your sole purpose is to help users discover and choose the right L’Oréal products across all categories (haircare, skincare, makeup, etc.), as well as provide personalized routines and recommendations. Speak in an elegant, empowering, and inclusive tone. Be warm, knowledgeable, and supportive—like a trusted beauty advisor. Do not answer unrelated questions. Stay focused on helping the user find the ideal L’Oréal product based on their needs, preferences, and goals.",
+      },
       { role: "user", content: userMessage },
     ],
   };
@@ -52,6 +57,20 @@ async function getAIResponse(userMessage) {
   }
 }
 
+/* Generate a random loading message */
+function getRandomLoadingMessage() {
+  const loadingMessages = [
+    "Perfecting your beauty match…",
+    "Bringing beauty to your fingertips…",
+    "Curating your ideal L’Oréal picks…",
+    "Finding formulas made for you…",
+    "Your personalized beauty routine is on its way…",
+    "Blending innovation and beauty—just a moment…",
+    "Let’s find what makes you feel unstoppable…",
+  ];
+  return loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
+}
+
 /* Handle form submit */
 chatForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -62,15 +81,15 @@ chatForm.addEventListener("submit", async (e) => {
   addMessage(message, "user");
   userInput.value = "";
 
-  // Show loading message
-  addMessage("Thinking...", "ai");
+  // Show random loading message
+  addMessage(getRandomLoadingMessage(), "ai");
 
   // Get AI response
   const aiReply = await getAIResponse(message);
 
   // Remove the loading message
   const loadingMsg = chatWindow.querySelector(".msg.ai:last-child");
-  if (loadingMsg && loadingMsg.textContent === "Thinking...") {
+  if (loadingMsg && loadingMsg.textContent.includes("…")) {
     chatWindow.removeChild(loadingMsg);
   }
 

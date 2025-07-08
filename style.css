@@ -7,7 +7,7 @@
 
 /* —— body + fonts —— */
 body {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-family: "Monospace", "Courier New", monospace;
   color: #333;
   display: flex;
   justify-content: center;
@@ -57,12 +57,12 @@ body {
 
 .chat-window {
   height: 360px;
-  border: 1px solid #000;
+  border: 10px solid #e3a535;
   padding: 20px;
   font-size: 18px;
   line-height: 1.5;
   overflow-y: auto;
-  background: #fafafa;
+  background: #fff;
   white-space: pre-line;
 }
 
@@ -92,6 +92,7 @@ body {
   padding: 12px;
   border: 1px solid #ccc;
   font-size: 18px;
+  font-family: "Monospace", "Courier New", monospace;
 }
 
 .chat-form input:focus {

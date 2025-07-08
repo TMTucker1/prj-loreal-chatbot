@@ -37,6 +37,17 @@ body {
   width: 25%;
   height: auto;
   filter: drop-shadow(0 0 5px #ff003b);
+  animation: pulse-shadow 4s infinite;
+}
+
+@keyframes pulse-shadow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px #ff003b);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #ff003b);
+  }
 }
 
 /* chat window */

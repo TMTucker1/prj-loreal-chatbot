@@ -224,3 +224,20 @@ body {
 .question-history.open .dropdown-arrow {
   transform: rotate(180deg);
 }
+
+/* Adjust text size for smaller screens */
+@media (max-width: 768px) {
+  .chat-window {
+    font-size: 16px; /* Reduce font size in chat window */
+  }
+
+  .chat-form input {
+    font-size: 16px; /* Reduce font size in input field */
+  }
+
+  .chat-form button {
+    font-size: 16px; /* Adjust button font size */
+    width: 40px; /* Adjust button size */
+    height: 40px;
+  }
+}

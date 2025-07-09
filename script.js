@@ -122,6 +122,11 @@ function scrollToQuestion(questionText) {
   }
 }
 
+/* Ensure the input field scrolls into view when focused */
+userInput.addEventListener("focus", () => {
+  userInput.scrollIntoView({ behavior: "smooth", block: "center" });
+});
+
 /* Handle form submit */
 chatForm.addEventListener("submit", async (e) => {
   e.preventDefault();

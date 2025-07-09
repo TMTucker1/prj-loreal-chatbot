@@ -25,10 +25,11 @@ body {
 }
 
 .site-title {
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 500;
   margin-bottom: 10px;
   color: #e3a535;
+  text-shadow: #979696 1px 0 5px;
 }
 
 .site-logo {

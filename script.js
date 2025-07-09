@@ -105,7 +105,21 @@ function updateQuestionHistory(userMessage) {
   // Add the new question to the history
   const newQuestion = document.createElement("li");
   newQuestion.textContent = userMessage;
+  newQuestion.addEventListener("click", () => {
+    scrollToQuestion(userMessage);
+  });
   historyList.appendChild(newQuestion);
+}
+
+// Function to scroll to a specific question in the chat window
+function scrollToQuestion(questionText) {
+  const messages = chatWindow.querySelectorAll(".msg.user");
+  for (const message of messages) {
+    if (message.textContent === questionText) {
+      message.scrollIntoView({ behavior: "smooth" });
+      break;
+    }
+  }
 }
 
 /* Handle form submit */
@@ -146,6 +160,6 @@ questionHistory.addEventListener("click", () => {
 
   // If history is empty, show a placeholder message
   if (historyList.children.length === 0) {
-    historyList.innerHTML = '<li>No questions asked yet</li>';
+    historyList.innerHTML = "<li>No questions asked yet</li>";
   }
 });

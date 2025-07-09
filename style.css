@@ -7,7 +7,7 @@
 
 /* —— body + fonts —— */
 body {
-  font-family: "Monospace", "Courier New", monospace;
+  font-family: "Monotype Modern", "Times New Roman", serif;
   color: #333;
   display: flex;
   justify-content: center;
@@ -79,7 +79,7 @@ body {
 .msg.ai {
   color: #666666;
   font-size: 16px;
-  font-family: "Courier", "Courier New", monospace;
+  font-family: "Monotype Modern", "Times New Roman", serif;
 }
 
 /* input row */
@@ -94,7 +94,7 @@ body {
   padding: 12px;
   border: 1px solid #ccc;
   font-size: 18px;
-  font-family: "Monospace", "Courier New", monospace;
+  font-family: "Monotype Modern", "Times New Roman", serif;
 }
 
 .chat-form input:focus {
@@ -167,7 +167,6 @@ body {
 
 /* question history */
 .question-history {
-
   width: 100%;
   max-height: 120px;
   background-color: #f0f0f0;
@@ -191,7 +190,7 @@ body {
 }
 
 .question-history h2 {
-  font-size: 16px;
+  font-size: 12px;
   margin-bottom: 5px;
   color: #333;
 }
@@ -199,10 +198,21 @@ body {
 .question-history li {
   margin-bottom: 5px;
   cursor: pointer;
-  color: #007bff;
-  text-decoration: underline;
+  color: rgba(255, 0, 59, 0.5);
 }
 
 .question-history li:hover {
   color: #0056b3;
+}
+
+.question-history .dropdown-arrow {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 12px;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.question-history.open .dropdown-arrow {
+  transform: rotate(180deg);
 }

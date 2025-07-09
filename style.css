@@ -73,13 +73,21 @@ body {
 }
 
 .msg.user {
+  background-color: rgba(227, 166, 53, 0.5);
   color: #000;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 70%;
+  margin: 10px auto 10px 0;
 }
 
 .msg.ai {
-  color: #666666;
-  font-size: 16px;
-  font-family: "Monotype Modern", "Times New Roman", serif;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 70%;
+  margin: 10px 0 10px auto;
 }
 
 /* input row */
